@@ -28,7 +28,7 @@ const getAllProducts = async (req, res) => {
         //sending repsonse
         let { products, total, count } = res;
         res.status(StatusCodes.OK).json(total, count, products);
-        productsArray.push(products);
+        productsArray.push(products); //We can store this array in a database
       })
       .catch((error) => {
         //Throwing error
@@ -41,7 +41,7 @@ const getAllProducts = async (req, res) => {
       .then((res) => {
         let { products, total, count } = res;
         res.status(StatusCodes.OK).json(total, count, products);
-        productsArray.push(products);
+        productsArray.push(products); //We can store this array in a database
       })
       .catch((error) => {
         throw new NotFoundError(`No products found on this URL`);
